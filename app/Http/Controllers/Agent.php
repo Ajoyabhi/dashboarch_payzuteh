@@ -38,7 +38,7 @@ class Agent extends Controller
     
     public function callGetMethod($url,$token)
     {
-        $url = 'http://pay.jippay.com:3000/'.$url;
+        $url = 'http://localhost:3000/'.$url;
         $headers = array("Accept:application/json", "Content-Type:application/json", "Authorization:".$token);
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
@@ -56,7 +56,7 @@ class Agent extends Controller
 
     public function callPostMethod($url, $token, $body)
     {
-        $url = 'http://pay.jippay.com:3000/'.$url;
+        $url = 'http://localhost:3000/'.$url;
         $headers = array('Content-Type:application/json',"Accept:application/json","Authorization:".$token);
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);

@@ -197,14 +197,14 @@ Jippay
                             </a>
                         </li>
 
-                        <li>
+                        <!-- <li>
                             <a href="{{url('/agent/payin-report')}}">
                                 <span class="icon-holder">
                                     <i class="anticon anticon-pay-circle"></i>
                                 </span>
                                 <span class="title">Payin Report</span>
                             </a>
-                        </li>
+                        </li> -->
 
                         <li>
                             <a href="{{url('/agent/payout-report')}}">

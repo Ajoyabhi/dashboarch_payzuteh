@@ -288,7 +288,7 @@ Jippay
                         <!-- @endif -->
 
                         <!-- @if(Auth::user()->user_type == 1) -->
-                        <li>
+                        <!-- <li>
                             <a href="{{url('user/payin-report')}}">
 
                                 <span class="icon-holder">
@@ -299,7 +299,7 @@ Jippay
 
                                 <span class="title">Payin Report</span>
                             </a>
-                        </li>
+                        </li> -->
                         <!-- @endif -->
 
                         <li>
@@ -347,14 +347,14 @@ Jippay
                             </a>
                         </li>
 
-                        <!--<li>-->
-                        <!--    <a href="{{url('user/api-docs')}}">-->
-                        <!--        <span class="icon-holder">-->
-                        <!--            <i class="anticon anticon-table"></i>-->
-                        <!--        </span>-->
-                        <!--        <span class="title">Api Docs</span>-->
-                        <!--    </a>-->
-                        <!--</li>-->
+                        <li>
+                           <a href="{{url('user/api-docs')}}">
+                               <span class="icon-holder">
+                                   <i class="anticon anticon-table"></i>
+                               </span>
+                               <span class="title">Development Docs</span>
+                           </a>
+                        </li>
 
                         
 

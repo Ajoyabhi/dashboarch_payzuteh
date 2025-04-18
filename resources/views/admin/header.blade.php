@@ -297,7 +297,7 @@ Jippay
 
                         </li>
 
-                        <li>
+                        <!-- <li>
 
                             <a href="{{url('/admin/payin-report')}}">
 
@@ -313,7 +313,7 @@ Jippay
 
                             </a>
 
-                        </li>
+                        </li> -->
 
                         <li>
 

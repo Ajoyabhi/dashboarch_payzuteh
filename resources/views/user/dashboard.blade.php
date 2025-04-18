@@ -24,7 +24,7 @@
                             </div>
                           </a>
                         </div>
-                        <div class="col-md-6 col-lg-3 ag-courses_item">
+                        <!-- <div class="col-md-6 col-lg-3 ag-courses_item">
                           <a href="#" class="ag-courses-item_link">
                             <div class="ag-courses-item_bg"></div>
                             <div class="ag-courses-item_title">
@@ -33,12 +33,12 @@
                             </div>
                             <div class="ag-courses-item_date-box">
                               <span class="ag-courses-item_date">
-                              <!-- {{round(($usersBalances)-($user->lien)-($user->rolling_reserve), 2)}} -->
+                              {{round(($usersBalances)-($user->lien)-($user->rolling_reserve), 2)}}
                               {{round($user->settlement, 2)}}
                               </span>
                             </div>
                           </a>
-                        </div>
+                        </div> -->
 
                         <div class="col-md-6 col-lg-3 ag-courses_item">
                           <a href="#" class="ag-courses-item_link">
@@ -55,7 +55,7 @@
                           </a>
                         </div>
 
-                        <div class="col-md-6 col-lg-3 ag-courses_item">
+                        <!-- <div class="col-md-6 col-lg-3 ag-courses_item">
                           <a href="#" class="ag-courses-item_link">
                             <div class="ag-courses-item_bg"></div>
                             <div class="ag-courses-item_title">
@@ -68,7 +68,7 @@
                               </span>
                             </div>
                           </a>
-                        </div>
+                        </div> -->
 
                         <div class="col-md-6 col-lg-3 ag-courses_item">
                           <a href="#" class="ag-courses-item_link">
@@ -85,7 +85,7 @@
                           </a>
                         </div>
 
-                        <div class="col-md-6 col-lg-3 ag-courses_item">
+                        <!-- <div class="col-md-6 col-lg-3 ag-courses_item">
                           <a href="#" class="ag-courses-item_link">
                             <div class="ag-courses-item_bg"></div>
                             <div class="ag-courses-item_title">
@@ -98,7 +98,7 @@
                               </span>
                             </div>
                           </a>
-                        </div>
+                        </div> -->
 
                         <div class="col-md-6 col-lg-3 ag-courses_item">
                           <a href="#" class="ag-courses-item_link">

@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
 use App\Models\UserIp;
+use Illuminate\Support\Facades\Log;
 
 class Login extends Controller
 {
@@ -22,7 +23,7 @@ class Login extends Controller
     }
 
     public function verifyUserAuth(Request $request)  {
-        
+        Log::info('verifyUserAuth function called');
         $credentials = $request->validate([
             //'mobile' => 'required|regex:/[0-9]{10}/|digits:10',
             'user_name' => 'required',
@@ -33,15 +34,19 @@ class Login extends Controller
             // $request->session()->regenerate();
             $user = Auth::user();
             if($user->user_type == 0){
+                Log::info('verifyUserAuth function admin called');
                 return redirect()->intended('admin/dashboard');
             }
             elseif($user->user_type == 1){
+                Log::info('verifyUserAuth function 1 called');
                 return redirect()->intended('user/dashboard');
             }
             elseif($user->user_type == 4){
+                Log::info('verifyUserAuth function 4 called');
                 return redirect()->intended('payout-user/dashboard');
             }
             elseif($user->user_type == 3){
+                Log::info('verifyUserAuth function 3 called');
                 return redirect()->intended('agent/dashboard');
             }
             elseif($user->user_type == 2){
@@ -59,7 +64,7 @@ class Login extends Controller
             }
             
         }
- 
+        Log::info('verifyUserAuth function called end');
         return back()->withErrors([
             'mobile' => 'The provided credentials do not match our records.',
         ])->onlyInput('mobile');

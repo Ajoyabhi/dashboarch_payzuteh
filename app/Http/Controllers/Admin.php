@@ -35,7 +35,7 @@ class Admin extends Controller
     
     public function callGetMethod($url, $token='')
     {
-        $url = 'http://pay.jippay.com:3000/'.$url;
+        $url = 'http://localhost:3000/'.$url;
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
         $headers = array('Content-Type:application/json',"Accept:application/json","Authorization:".$token);
@@ -55,7 +55,7 @@ class Admin extends Controller
 
     public function callPostMethod($url, $token, $body)
     {
-        $url = 'http://pay.jippay.com:3000/'.$url;
+        $url = 'http://localhost:3000/'.$url;
         // $url = 'https://ffb0-2401-4900-1c5a-e365-719f-2fd-7c89-20d.ngrok-free.app/'.$url;
         $headers = array('Content-Type:application/json',"Accept:application/json","Authorization:".$token);
         $ch = curl_init();

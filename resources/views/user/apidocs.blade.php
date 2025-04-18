@@ -5,153 +5,160 @@
 <div class="main-content">    
     <div class="row">
         <div class="col-md-12 col-lg-12">
-            <div class="card">
+
+            <!-- Check User Balance API -->
+         
+
+            <!-- Payout API -->
+            <div class="card mb-4">
                 <div class="card-body">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <h5>Check User Balance Api</h5>                                        
-                    </div>
-                    <div class="m-t-30">
-                        <div class="table-responsive-md table-responsive-sm">
-                            <table class="table table-hover table-bordered" id="datatable"> 
-                                <thead>
-                                    <tr>
-                                        <th>URL</th>
-                                        <th>https://api.paydexsolutions.in/api/v1/checkuserbalance</th>
-                                    </tr>
-                                    <tr>
-                                        <th>Method</th>
-                                        <th>POST</th>
-                                    </tr>
-                                    <tr>
-                                        <th>Header</th>
-                                        <th>Pass : Authorization Key <a target="_blank" href="/user/dev-setting">click</a> Like : Authorization:yourkey</th>
-                                    </tr>
-                                    <tr>
-                                        <th>Response</th>
-                                        <th>{
-                                                "status": "SUCCESS",
-                                                "message": "Transaction is Successful",
-                                                "data": {
-                                                    "balance": 11604.8199999999997089616954326629638671875
-                                                }
-                                            }
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                </tbody>
-                            </table>
-                        </div>
+                    <h5 class="card-title mb-3">Payout API</h5>
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <tbody>
+                                <tr>
+                                    <th>URL</th>
+                                    <td style="font-size: 18px; font-weight: bold;">https://api.payzutech.in/api/v6/doPayoutApi</td>
+                                </tr>
+                                <tr>
+                                    <th>Method</th>
+                                    <td>POST</td>
+                                </tr>
+                                <tr>
+                                    <th>Header</th>
+                                    <td>
+                                        Pass: Authorization Key 
+                                        <a href="{{url('/user/dev-setting')}}" target="_blank">Click here</a> <br>
+                                        Example: <code>Authorization: yourkey</code>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Request</th>
+                                    <td>
+<pre class="mb-0"><code>{
+    "name": "V******ma",
+    "accountNumber": "1********2",
+    "bankIfsc": "K********6",
+    "mobileNumber": "9********8",
+    "beneBankName": "K********K",
+    "referenceNumber": "3***********9",
+    "transferAmount": "100",
+    "transferMode": "IMPS"
+}</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Response</th>
+                                    <td>
+<pre class="mb-0"><code>{
+    "status": "SUCCESS",
+    "message": "CO00 - Transaction is Successful.",
+    "data": {
+        "payout_ref": "311541447890789",
+        "bank_ref": "325415029910"
+    }
+}</code></pre>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
 
-            <div class="card">
+            <!-- Check Payout Status API -->
+            <div class="card mb-4">
                 <div class="card-body">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <h5>Payout Api</h5>                                        
-                    </div>
-                    <div class="m-t-30">
-                        <div class="table-responsive-md table-responsive-sm">
-                            <table class="table table-hover table-bordered" id="datatable"> 
-                                <thead>
-                                    <tr>
-                                        <th>URL</th>
-                                        <th>https://api.paydexsolutions.in/api/v1/doPayout</th>
-                                    </tr>
-                                    <tr>
-                                        <th>Method</th>
-                                        <th>POST</th>
-                                    </tr>
-                                    <tr>
-                                        <th>Header</th>
-                                        <th>Pass : Authorization Key <a target="_blank" href="/user/dev-setting">click</a> Like : Authorization:yourkey</th>
-                                    </tr>
-                                    <tr>
-                                        <th>REQUEST</th>
-                                        <th>
-                                            {
-                                                "name": "V******ma",
-                                                "accountNumber": "1********2",
-                                                "bankIfsc": "K********6",
-                                                "mobileNumber": "9********8",
-                                                "beneBankName": "K********K",
-                                                "referenceNumber": "3***********9",
-                                                "transferAmount": "100",
-                                                "transferMode": "IMPS"
-                                            }
-                                        </th>
-                                    </tr>
-                                    <tr>
-                                        <th>Response</th>
-                                        <th>{
-                                                "status": "SUCCESS",
-                                                "message": "CO00 - Transaction is Successful.",
-                                                "data": {
-                                                    "payout_ref": "311541447890789",
-                                                    "bank_ref": "325415029910"
-                                                }
-                                            }
-
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                </tbody>
-                            </table>
-                        </div>
+                    <h5 class="card-title mb-3">Check Payout Status API</h5>
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <tbody>
+                                <tr>
+                                    <th>URL</th>
+                                    <td style="font-size: 17px; font-weight: bold;">https://api.payzutech.in/api/v6/payoutCheckStatus</td>
+                                </tr>
+                                <tr>
+                                    <th>Method</th>
+                                    <td>POST</td>
+                                </tr>
+                                <tr>
+                                    <th>Header</th>
+                                    <td>
+                                        Pass: Authorization Key 
+                                        <a href="{{url('/user/dev-setting')}}" target="_blank">Click here</a> <br>
+                                        Example: <code>Authorization: yourkey</code>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Request</th>
+                                    <td>
+<pre class="mb-0"><code>{
+    "referenceNumber": "311541447890655"
+}</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Response</th>
+                                    <td>
+<pre class="mb-0"><code>{
+    "status": "SUCCESS",
+    "message": "Transaction Successful",
+    "data": {
+        "payout_ref": "311541447890655",
+        "bank_ref": "325419122605"
+    }
+}</code></pre>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
-            
-
-            <div class="card">
+            <div class="card mb-4">
                 <div class="card-body">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <h5>Check Payout Status Api</h5>                                        
-                    </div>
-                    <div class="m-t-30">
-                        <div class="table-responsive-md table-responsive-sm">
-                            <table class="table table-hover table-bordered" id="datatable"> 
-                                <thead>
-                                    <tr>
-                                        <th>URL</th>
-                                        <th> https://api.paydexsolutions.in/api/v1/checkstatus</th>
-                                    </tr>
-                                    <tr>
-                                        <th>Method</th>
-                                        <th>POST</th>
-                                    </tr>
-                                    <tr>
-                                        <th>Header</th>
-                                        <th>Pass : Authorization Key <a target="_blank" href="/user/dev-setting">click</a> Like : Authorization:yourkey</th>
-                                    </tr>
-                                    <tr>
-                                        <th>REQUEST</th>
-                                        <th>
-                                            {
-                                                "referenceNumber": "311541447890655"
-                                            }
-                                        </th>
-                                    </tr>
-                                    <tr>
-                                        <th>Response</th>
-                                        <th>{"status":"SUCCESS","message":"Transaction Successful","data":{"payout_ref":"311541447890655","bank_ref":"325419122605"}}
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                </tbody>
-                            </table>
-                        </div>
+                    <h5 class="card-title mb-3">Check User Balance API</h5>
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <tbody>
+                                <tr>
+                                    <th>URL</th>
+                                    <td style="font-size: 18px; font-weight: bold;">https://api.payzutech.in/api/v6/checkuserbalance</td>
+                                </tr>
+                                <tr>
+                                    <th>Method</th>
+                                    <td>POST</td>
+                                </tr>
+                                <tr>
+                                    <th>Header</th>
+                                    <td>
+                                        Pass: Authorization Key 
+                                        <a href="{{url('/user/dev-setting')}}" target="_blank">Click here</a> <br>
+                                        Example: <code>Authorization: yourkey</code>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Response</th>
+                                    <td>
+<pre class="mb-0"><code>{
+    "status": "SUCCESS",
+    "message": "Transaction is Successful",
+    "data": {
+        "balance": 11604.82
+    }
+}</code></pre>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
-
 
         </div>
     </div>
 </div>
+
 <!-- Content Wrapper END -->
 <!-- model -->        
 @include('user/footer')
