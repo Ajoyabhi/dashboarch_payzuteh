@@ -145,7 +145,7 @@
                           </a>
                         </div> -->
 
-                        <div class="row" style="width:100%">
+                        <div class="row ml-0" style="width:100%">
                             <div class="col-md-12 col-lg-12">
                                 <div class="card">
                                     <div class="card-body">
@@ -295,9 +295,9 @@
         var myChart = new Chart(ctx, {
             type: 'pie',
             data: {
-                labels: @json($data['labels']),
+                labels: @json($data['labels'] = ['Payout']),
                 datasets: [{
-                    data: @json($data['todayData']),
+                    data: @json($data['todayData'] = ['Payout']),
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.7)',
                         'rgba(54, 162, 235, 0.7)',
@@ -321,9 +321,9 @@
         var myChart = new Chart(ctx1, {
             type: 'pie',
             data: {
-                labels: @json($data['labels']),
+                labels: @json($data['labels'] = ['Payout']),
                 datasets: [{
-                    data: @json($data['totalData']),
+                    data: @json($data['totalData'] = [$totalPayout]),
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.7)',
                         'rgba(54, 162, 235, 0.7)',

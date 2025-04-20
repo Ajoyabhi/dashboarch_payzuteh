@@ -97,6 +97,7 @@
                             </div>
                           </a>
                         </div>
+                        <!-- #4481eb -->
                         <div class="col-md-6 col-lg-3 ag-courses_item">
                           <a href="#" class="ag-courses-item_link">
                             <div class="ag-courses-item_bg"></div>

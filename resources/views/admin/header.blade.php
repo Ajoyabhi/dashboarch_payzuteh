@@ -12,7 +12,7 @@
 
     <!-- Favicon -->
 
-    <link rel="shortcut icon" href="{{ asset('assets/images/logo/favicon.png') }}">
+    <link rel="shortcut icon" href="{{ asset('assets/images/logo/payzutech.png') }}">
 
     <!-- page css -->
 
@@ -36,8 +36,7 @@
 
             <div class="header">
 
-                <div class="logo logo-dark">
-Jippay
+                <div class="logo logo-dark" >PAYZUTECH
                     <!--<a href="{{ url('/admin/dashboard') }}">-->
 
                     <!--    <img src="{{ asset('assets/images/logo/PAYDEX SOLUTIONS.png') }}" alt="Logo">-->
@@ -244,7 +243,7 @@ Jippay
                         <li>
                             <a href="{{url('/admin/manage-staff')}}">
                                 <span class="icon-holder">
-                                    <i class="anticon anticon-user"></i>
+                                    <i class="anticon anticon-team"></i>
                                 </span>
                                 <span class="title">Manage Staff</span>
                             </a>
@@ -262,7 +261,7 @@ Jippay
 
                             <a href="{{ route('admin.payoutList')}}">
                                 <span class="icon-holder">
-                                    <i class="anticon anticon-table"></i>
+                                    <i class="anticon anticon-transaction"></i>
                                 </span>
                                 <span class="title">Manage Payout</span>
                             </a>
@@ -273,7 +272,7 @@ Jippay
 
                             <a href="{{url('/admin/bulk-payout')}}">
                                 <span class="icon-holder">
-                                    <i class="anticon anticon-table"></i>
+                                    <i class="anticon anticon-file-text"></i>
                                 </span>
                                 <span class="title">Bulk Payout</span>
                             </a>
@@ -285,7 +284,7 @@ Jippay
 
                                 <span class="icon-holder">
 
-                                    <i class="anticon anticon-table"></i>
+                                    <i class="anticon anticon-wallet"></i>
 
                                 </span>
 
@@ -321,7 +320,7 @@ Jippay
 
                                 <span class="icon-holder">
 
-                                    <i class="anticon anticon-table"></i>
+                                    <i class="anticon anticon-export"></i>
 
                                 </span>
 
@@ -336,7 +335,7 @@ Jippay
                         <li>
                             <a href="{{url('/admin/deduct-chargeback')}}">
                                 <span class="icon-holder">
-                                    <i class="anticon anticon-table"></i>
+                                    <i class="anticon anticon-pie-chart"></i>
                                 </span>
                                 <span class="title">ChargeBack</span>
                             </a>
@@ -345,7 +344,7 @@ Jippay
                         <li>
                             <a href="{{url('/admin/chargeback-report')}}">
                                 <span class="icon-holder">
-                                    <i class="anticon anticon-table"></i>
+                                    <i class="anticon anticon-pay-circle"></i>
                                 </span>
                                 <span class="title">ChargeBack Report</span>
                             </a>
@@ -354,7 +353,7 @@ Jippay
                         <li>
                             <a href="{{url('/admin/payrequest-list')}}">
                                 <span class="icon-holder">
-                                    <i class="anticon anticon-table"></i>
+                                    <i class="anticon anticon-dollar"></i>
                                 </span>
                                 <span class="title">Manage Fund Request</span>
                             </a>
@@ -363,7 +362,7 @@ Jippay
                         <li>
                             <a href="{{url('/admin/settlement')}}">
                                 <span class="icon-holder">
-                                    <i class="anticon anticon-table"></i>
+                                    <i class="anticon anticon-transaction"></i>
                                 </span>
                                 <span class="title">Settlement</span>
                             </a>

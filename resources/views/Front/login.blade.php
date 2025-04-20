@@ -10,7 +10,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Jippay</title>
+    <title>Payzutech</title>
     
     <!-- Favicon -->
 
@@ -58,11 +58,11 @@
 
                     <div class="login-form">
 
-                        <h4>Jippay</h4>
+                        <h4>Payzutech</h4>
 
                         <P> <span>Welcome Back !</span> <br>
 
-                            <span>Sign in to continue to Jippay.</span></P>
+                            <span>Sign in to continue to Payzutech !</span></P>
 
                             @if(session('success'))
 

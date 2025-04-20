@@ -12,7 +12,7 @@
 
     <!-- Favicon -->
 
-    <link rel="shortcut icon" href="{{ asset('assets/images/logo/favicon.png') }}">
+    <link rel="shortcut icon" href="{{ asset('assets/images/logo/payzutech.png') }}">
 
     <!-- page css -->
 
@@ -35,7 +35,7 @@
             <div class="header">
 
                 <div class="logo logo-dark">
-                    Jippay
+                    PAYZUTECH
                     <!--<a href="{{ url('/user/dashboard') }}">-->
 
                     <!--    <img src="{{ asset('assets/images/logo/PAYDEX SOLUTIONS.png') }}" alt="Logo">-->
@@ -49,7 +49,7 @@
                 </div>
 
                 <div class="logo logo-white">
-Jippay
+<!-- Jippay -->
                     <!--<a href="{{ url('/user/dashboard') }}">-->
 
                     <!--    <img src="{{ asset('assets/images/logo/logo.jpg') }}" alt="Logo">-->
@@ -253,7 +253,7 @@ Jippay
                         <li>
                             <a href="{{url('/user/payrequest-list')}}">
                                 <span class="icon-holder">
-                                    <i class="anticon anticon-table"></i>
+                                    <i class="anticon anticon-fund"></i>
                                 </span>
                                 <span class="title">Fund Request</span>
                             </a>
@@ -275,7 +275,7 @@ Jippay
 
                                 <span class="icon-holder">
 
-                                    <i class="anticon anticon-table"></i>
+                                    <i class="anticon anticon-wallet"></i>
 
                                 </span>
 
@@ -308,7 +308,7 @@ Jippay
 
                                 <span class="icon-holder">
 
-                                    <i class="anticon anticon-table"></i>
+                                    <i class="anticon anticon-swap-right"></i>
 
                                 </span>
 
@@ -341,7 +341,7 @@ Jippay
                         <li>
                             <a href="{{url('/user/dev-setting')}}">
                                 <span class="icon-holder">
-                                    <i class="anticon anticon-table"></i>
+                                    <i class="anticon anticon-setting"></i>
                                 </span>
                                 <span class="title">Devloper Setting</span>
                             </a>
@@ -350,7 +350,7 @@ Jippay
                         <li>
                            <a href="{{url('user/api-docs')}}">
                                <span class="icon-holder">
-                                   <i class="anticon anticon-table"></i>
+                                   <i class="anticon anticon-read"></i>
                                </span>
                                <span class="title">Development Docs</span>
                            </a>

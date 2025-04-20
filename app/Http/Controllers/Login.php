@@ -19,7 +19,7 @@ class Login extends Controller
 
     public function index()
     {
-        return view('Front/login');
+        return view('Front/login_new');
     }
 
     public function verifyUserAuth(Request $request)  {

@@ -19,6 +19,8 @@ use App\Models\PayinModel;
 use App\Models\PayoutList;
 use App\Models\PaymentRequest;
 use App\Models\SettlementHistory;
+use Illuminate\Support\Facades\Http;
+
 
 class Admin extends Controller
 {
@@ -35,7 +37,7 @@ class Admin extends Controller
     
     public function callGetMethod($url, $token='')
     {
-        $url = 'http://localhost:3000/'.$url;
+        $url = 'https://api.payzutech.in/'.$url;
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
         $headers = array('Content-Type:application/json',"Accept:application/json","Authorization:".$token);
@@ -55,7 +57,7 @@ class Admin extends Controller
 
     public function callPostMethod($url, $token, $body)
     {
-        $url = 'http://localhost:3000/'.$url;
+        $url = 'https://api.payzutech.in/'.$url;
         // $url = 'https://ffb0-2401-4900-1c5a-e365-719f-2fd-7c89-20d.ngrok-free.app/'.$url;
         $headers = array('Content-Type:application/json',"Accept:application/json","Authorization:".$token);
         $ch = curl_init();
@@ -1593,23 +1595,27 @@ class Admin extends Controller
         if($_POST)
         {
             $utr = $request['utr'];
-            $getTxn = PayinModel::where('utr',$utr)->get()->toArray();
-            if(count($getTxn) == 0)
-            {
-                return redirect()->back()->with('success', 'Utr not found');
-            }
 
-            $userId = (int)$getTxn[0]['userId'];
-            $orderId = $getTxn[0]['orderId'];
-            $txnId = $getTxn[0]['txnId'];
-            $contactId = $getTxn[0]['contactId'];
-            $amount = $getTxn[0]['amount'];
-            $charge = $getTxn[0]['charge'];
-            $utr = $getTxn[0]['utr'];
-            $totalAmount = $getTxn[0]['totalAmount'];
-            $totalAmount = $getTxn[0]['totalAmount'];
+            // Call NestJS API to fetch transaction
+            $response = Http::get("https://api.payzutech.in/getparticular_utr_detail", [
+                'utr' => $utr
+            ]);
+
+            if ($response->failed() || !$response['utr']) {
+                return redirect()->back()->with('success', 'UTR not found in MongoDB');
+            }
+            $utrData = $response->json();
+
+            $userId = (int)$utrData['userId'];
+            $orderId = $utrData['orderId'];
+            $txnId = $utrData['txnId'];
+            $amount = $utrData['amount'];
+            $totalAmount = $utrData['totalAmount'];
 
             $getUser = User::where("id",$userId)->first();
+            if (!$getUser) {
+                return redirect()->back()->with('error', 'User not found in SQL DB');
+            }
 
             $openBal = $getUser->wallet;
             $closeBal = $openBal - $totalAmount;  
@@ -1618,23 +1624,39 @@ class Admin extends Controller
             $UserInstance->deductFund($userId,$totalAmount);
 
             $remark = "Deduct ChargeBack";
-            UserTransaction::create([
-                'userId' => $userId,
-                'txnId' => $txnId,
-                'orderId' => $orderId,
-                'type' => "DEBIT",  
-                'operator' => "CHARGEBACK",
-                'openBalance' =>$openBal, 
-                'amount' => $totalAmount,
-                'walletBalance' =>$closeBal,
-                'credit' =>0, 
-                'debit' =>$totalAmount,
-                "status" => "SUCCESS",
-                'remark' => $remark,   
-                'api'=>"PINWALLET",
-                'requestIp' => "SYSTEM",          
+            $payload = [
+                'userId' => $utrData['userId'],
+                'userName' => $utrData['userName'],
+                'txnId' => $utrData['txnId'],
+                'orderId' => $utrData['orderId'],
+                'type' => 'DEBIT',
+                'operator' => 'CHARGEBACK',
+                'openBalance' => $openBal,
+                'amount' => $utrData['amount'],
+                'walletBalance' => $closeBal,
+                'credit' => 0,
+                'debit' => $utrData['totalAmount'],
+                'status' => 'SUCCESS',
+                'remark' => 'Chargeback due to UTR',
+                'api' => $utrData['api'],
+                'requestIp' => 'SYSTEM',
                 'created_by' => 1,
-            ]);
+            
+                // Additional fields you must preserve
+                'merchantCharge' => $utrData['merchantCharge'] ?? 0,
+                'merchantGst' => $utrData['merchantGst'] ?? 0,
+                'adminCharge' => $utrData['adminCharge'] ?? 0,
+                'admintax' => $utrData['admintax'] ?? 0,
+                'agentCharge' => $utrData['agentCharge'] ?? 0,
+                'agenttax' => $utrData['agenttax'] ?? 0,
+                'payerAmount' => $utrData['amount'] ?? 0,
+                'callbackReceived' => false,
+                'openingSettlementBalence' => $openBal,
+                'closingSettlementBalence' => $closeBal,   
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ];
+            Http::post('https://api.payzutech.in/add_user_transaction', $payload);
 
             return redirect()->back()->with('success', 'ChargeBack Deducted Successfully');
 

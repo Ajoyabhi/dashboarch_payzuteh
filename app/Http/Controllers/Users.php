@@ -34,7 +34,7 @@ class Users extends Controller
     
     public function callGetMethod($url,$token)
     {
-        $url = 'http://localhost:3000/'.$url;
+        $url = 'https://api.payzutech.in/'.$url;
         $headers = array("Accept:application/json", "Content-Type:application/json", "Authorization:".$token);
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
@@ -52,7 +52,7 @@ class Users extends Controller
 
     public function callPostMethod($url, $token, $body)
     {
-        $url = 'http://localhost:3000/'.$url;
+        $url = 'https://api.payzutech.in/'.$url;
         $headers = array('Content-Type:application/json',"Accept:application/json","Authorization:".$token);
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);

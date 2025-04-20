@@ -12,7 +12,7 @@
 
     <!-- Favicon -->
 
-    <link rel="shortcut icon" href="{{ asset('assets/images/logo/favicon.png') }}">
+    <link rel="shortcut icon" href="{{ asset('assets/images/logo/payzutech.png') }}">
 
     <!-- page css -->
 
@@ -36,7 +36,7 @@
             <div class="header">
 
                 <div class="logo logo-dark">
-Jippay
+PAYZUTECH
                     <!--<a href="{{ url('/agent/dashboard') }}">-->
 
                     <!--    <img src="{{ asset('assets/images/logo/logo.jpg') }}" alt="Logo">-->
@@ -191,7 +191,7 @@ Jippay
                         <li>
                             <a href="{{url('/agent/dopayout')}}">
                                 <span class="icon-holder">
-                                    <i class="anticon anticon-money-collect"></i>
+                                    <i class="anticon anticon-swap-right"></i>
                                 </span>
                                 <span class="title">Payout</span>
                             </a>

@@ -16814,7 +16814,7 @@ iframe {
 
 .side-nav {
     width: 280px;
-    background-color: #000;
+    background-color: #3674B5;
     z-index: 1000;
     top: 70px;
     bottom: 0px;
@@ -27896,7 +27896,7 @@ a.badge-purple:focus {
 }
 
 .table>thead>tr>th {
-    background-color: rgb(0 0 0);
+    background-color: #3674b5;
     color: white;
     border-bottom: 1px solid #ededed;
     font-weight: 500
@@ -29426,7 +29426,7 @@ div.is-invalid {
 .ag-courses-item_link {
   display: block;
   padding: 30px 20px;
-  background-color: #121212;
+  background-color: #3674B5;
 
   overflow: hidden;
     border-radius: 20px;
@@ -29473,7 +29473,7 @@ div.is-invalid {
 .ag-courses-item_bg {
   height: 128px;
   width: 128px;
-  background-color: #f9b234;
+  background-color: #3E3F5B;
 
   z-index: 1;
   position: absolute;
@@ -29487,19 +29487,19 @@ div.is-invalid {
   transition: all .5s ease;
 }
 .ag-courses_item:nth-child(2n) .ag-courses-item_bg {
-  background-color: #3ecd5e;
+  background-color: #3E3F5B;
 }
 .ag-courses_item:nth-child(3n) .ag-courses-item_bg {
-  background-color: #e44002;
+  background-color: #3E3F5B;
 }
 .ag-courses_item:nth-child(4n) .ag-courses-item_bg {
-  background-color: #952aff;
+  background-color: #3E3F5B;
 }
 .ag-courses_item:nth-child(5n) .ag-courses-item_bg {
-  background-color: #cd3e94;
+  background-color: #3E3F5B;
 }
 .ag-courses_item:nth-child(6n) .ag-courses-item_bg {
-  background-color: #4c49ea;
+  background-color: #3E3F5B;
 }
 
 
@@ -29546,7 +29546,7 @@ table {
 }
 
 .tbl-header{
-    background-color: rgb(0 0 0);
+    background-color: #3674b5;
     color: white;
  }
 .tbl-content{
@@ -29631,7 +29631,7 @@ td{
 	position: relative;
 	overflow: hidden;
 	z-index: 1;
-	background-color: #000;
+	background-color: #3674b5;
 	border:1px solid black;
 }
 .new-button:hover{
@@ -29661,7 +29661,7 @@ table.dataTable thead>tr>th.sorting_asc:before, table.dataTable thead>tr>th.sort
     position: relative;
     overflow: hidden;
     z-index: 1;
-    background-color: #000;
+    background-color: #3674b5;
     border: 1px solid black;
 }
 .btn:hover {
